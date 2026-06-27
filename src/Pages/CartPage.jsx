@@ -104,7 +104,6 @@ export default function CartPage() {
                 </h2>
 
                 {cart.length === 0 ? (
-                    /* Empty Cart State */
                     <div className="flex flex-col items-center justify-center py-16 text-center bg-white/40 backdrop-blur-md border border-gray-200/60 rounded-xl lg:rounded-3xl p-3 lg:p-6 max-w-lg mx-auto shadow-sm">
                         <div className="w-20 h-20 rounded-full bg-[#EFEAE2] flex items-center justify-center text-primary-200 mb-6 text-3xl">
                             <FaShoppingBag />

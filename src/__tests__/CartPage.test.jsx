@@ -5,12 +5,10 @@ import { MemoryRouter } from 'react-router-dom';
 import CartPage from '../Pages/CartPage';
 import { useCart } from '../Context/CartContext';
 
-// Mock context hook
 vi.mock('../Context/CartContext', () => ({
     useCart: vi.fn()
 }));
 
-// Mock navigate hook
 const mockNavigate = vi.fn();
 vi.mock('react-router-dom', async () => {
     const actual = await vi.importActual('react-router-dom');
@@ -69,7 +67,7 @@ describe('CartPage UI Component', () => {
         );
 
         expect(screen.getByText('Double Burger')).toBeInTheDocument();
-        expect(screen.getAllByText('$20.00')[0]).toBeInTheDocument(); // total calculation
+        expect(screen.getAllByText('$20.00')[0]).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Proceed to Checkout' })).toBeInTheDocument();
     });
 
@@ -91,13 +89,10 @@ describe('CartPage UI Component', () => {
             </MemoryRouter>
         );
 
-        // Proceed to details entry
         await user.click(screen.getByRole('button', { name: 'Proceed to Checkout' }));
 
-        // Click submit without entering values
         await user.click(screen.getByRole('button', { name: 'Place Order' }));
 
-        // Assert UI validation errors
         expect(screen.getByText('Full name is required.')).toBeInTheDocument();
         expect(screen.getByText('Delivery address is required.')).toBeInTheDocument();
         expect(screen.getByText('Phone number is required.')).toBeInTheDocument();
@@ -123,10 +118,9 @@ describe('CartPage UI Component', () => {
 
         await user.click(screen.getByRole('button', { name: 'Proceed to Checkout' }));
 
-        // Fill in valid name and address but invalid phone number
         await user.type(screen.getByLabelText(/Full Name/i), 'Jane Doe');
         await user.type(screen.getByLabelText(/Delivery Address/i), '456 Side Street, NY');
-        await user.type(screen.getByLabelText(/Phone Number/i), '123'); // Under 10 digits
+        await user.type(screen.getByLabelText(/Phone Number/i), '123');
 
         await user.click(screen.getByRole('button', { name: 'Place Order' }));
 
