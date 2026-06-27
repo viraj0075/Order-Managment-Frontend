@@ -135,7 +135,7 @@ export default function CartPage() {
                                         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                                             <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 flex items-center justify-center">
                                                 <img
-                                                    src={item.image}
+                                                    src={item.image || null}
                                                     alt={item.name}
                                                     className="w-full h-full object-cover"
                                                 />
