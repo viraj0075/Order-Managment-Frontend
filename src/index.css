@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-100: #4D0711;
+  --color-primary-200: #fe7d38;
+  --color-primary-300: #903926;
+  --color-primary-400: #8be0fa;
+  --color-primary-500: #faafdd;
+  --color-primary-600: #fecc3b;
+  --color-primary-700: #BD1F16;
+  --color-primary-900: #f7f4e5;
+  --color-primary-1000: #fefdf5;
+  --font-arimo: "Poppins", sans-serif;
+  --animate-marquee: marquee 25s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+}
+
+body {
+  font-family: var(--font-arimo);
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-arimo);
+}
+
+button {
+  font-family: var(--font-arimo);
+}
+
+@utility scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
