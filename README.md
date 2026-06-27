@@ -44,7 +44,7 @@ Ensure you have the following installed on your system:
 3. Set up the environment variables:
    Create a `.env` file in the root of the `Frontend` directory:
    ```env
-   VITE_API_URL=http://localhost:4000
+   VITE_API_URL=http://localhost:<PORT>
    ```
    *Verify this URL matches the port your backend service is running on.*
 4. Start the development server:
