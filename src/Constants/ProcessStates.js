@@ -13,7 +13,7 @@ export const processSteps = [
         desc: "Your food arrives hot and ready in 25 minutes or less.",
         label: "ORDER",
         labelColor: "text-primary-400",
-        image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRUGuUOnwzzIibulmZPp7F0YN1feFA2VQDxYs79Rq0vKzCbZI0T"
+        image: "https://babadough.com/pluto-images/funnel/images/f94f5684-eb6a-48bb-b1cd-b8da1387521d?w=768&h=768&fit=cover"
     },
     {
         step: "STEP 3",
@@ -21,6 +21,6 @@ export const processSteps = [
         desc: "Tear into it. No apologies. No regrets. Just good food.",
         label: "ENJOY",
         labelColor: "text-primary-500",
-        image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSM_VX5cFfGUXjaQwdzQju8HJOs4xBJDqVJbs8HbrScvlM57L-2"
+        image: "https://img.magnific.com/free-photo/front-view-woman-with-delicious-pizza_23-2150347901.jpg"
     }
 ];

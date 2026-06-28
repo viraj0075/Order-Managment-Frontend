@@ -4,17 +4,26 @@ import { useNavigate } from 'react-router-dom';
 
 import ContainerLayout from '../Layouts/ContainerLayout';
 import { categories } from '../Constants/Categories';
+import { MENU_STATES } from '../Constants/OrderStates';
 
 const Hero = () => {
     const navigate = useNavigate();
     const marqueeItems = [...categories, ...categories, ...categories];
+
+    const handleCategoryClick = (name) => {
+        if (name === 'BURGERS') {
+            navigate(`/?category=${MENU_STATES.BURGER}`);
+        } else if (name === 'PIZZAS') {
+            navigate(`/?category=${MENU_STATES.PIZZA}`);
+        }
+    };
 
     return (
         <section className="bg-primary-100 text-white pt-36 pb-16 md:pt-44 md:pb-20 overflow-hidden relative flex flex-col justify-between min-h-screen">
 
             <div className="flex grow items-center z-10">
                 <ContainerLayout>
-                    <div className="flex flex-col items-center text-center max-w-4xl mx-auto px-4">
+                    <div className="flex flex-col items-center text-center max-w-4xl mx-auto px-2 ">
                         <div className="inline-flex items-center gap-2 border border-primary-200/40 bg-white/5 px-4 py-2 rounded-full text-xs md:text-sm font-semibold text-primary-200 mb-6 md:mb-8 transition-all duration-300 hover:bg-white/10 hover:border-primary-200/60 select-none">
                             <FaBolt className="text-primary-200 animate-bounce" />
                             <span>Delivered in 25 minutes or less</span>
@@ -64,9 +73,10 @@ const Hero = () => {
                                 const { name, bgColor, textColor, image } = item || {};
                                 return (<div
                                     key={`${name}-${idx}`}
-                                    className={`flex flex-col shrink-0 w-50 sm:w-52 md:w-60 rounded-2xl p-3 pb-4 select-none hover:scale-105 hover:-translate-y-2 transition-all duration-300 shadow-xl cursor-pointer ${bgColor}`}
+                                    onClick={() => handleCategoryClick(name)}
+                                    className={`flex flex-col shrink-0 w-50 sm:w-52 md:w-60 rounded-2xl p-3 pb-4 select-none hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 shadow-xl cursor-pointer ${bgColor}`}
                                 >
-                                    <div className="overflow-hidden rounded-2xl w-full h-52 md:h-60">
+                                    <div className="overflow-hidden rounded-2xl w-full h-58 md:h-64">
                                         <img
                                             src={image}
                                             alt={`Delicious freshly prepared ${name.toLowerCase()}`}

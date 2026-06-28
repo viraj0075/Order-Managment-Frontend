@@ -22,14 +22,14 @@ export default function Proccess() {
                         const { image, title, step, desc, label, labelColor } = stepItem || {};
                         return (<div
                             key={idx}
-                            className="relative overflow-hidden group rounded-2xl lg:rounded-3xl h-[350px] sm:h-[420px] md:h-[480px] shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 w-[85vw] sm:w-[45vw] md:w-full shrink-0"
+                            className="relative overflow-hidden group rounded-2xl lg:rounded-3xl h-[350px] sm:h-[420px] md:h-[480px] shadow-md transition-all duration-300 hover:shadow-xl w-[85vw] sm:w-[45vw] md:w-full shrink-0"
                         >
                             <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/35 to-transparent z-10 pointer-events-none rounded-2xl lg:rounded-3xl" />
 
                             <img
                                 src={image}
                                 alt={title}
-                                className="w-full h-full object-cover rounded-2xl lg:rounded-3xl transition-transform duration-700 ease-out group-hover:scale-105"
+                                className="w-full h-full object-cover rounded-2xl lg:rounded-3xl transition-transform duration-700 ease-out scale-105"
                                 loading="lazy"
                             />
 

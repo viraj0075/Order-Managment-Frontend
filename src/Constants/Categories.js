@@ -6,7 +6,7 @@ export const categories = [
         textColor: "text-white"
     },
     {
-        name: "PIZZA",
+        name: "PIZZAS",
         image: "https://cdn.pixabay.com/photo/2015/02/13/11/04/pizza-634967_1280.jpg",
         bgColor: "bg-primary-400",
         textColor: "text-white"
@@ -18,7 +18,7 @@ export const categories = [
         textColor: "text-white"
     },
     {
-        name: "PIZZA",
+        name: "PIZZAS",
         image: "https://cdn.pixabay.com/photo/2020/06/08/16/49/pizza-5275191_1280.jpg",
         bgColor: "bg-primary-600",
         textColor: "text-primary-100"
@@ -30,7 +30,7 @@ export const categories = [
         textColor: "text-white"
     },
     {
-        name: "PIZZA",
+        name: "PIZZAS",
         image: "https://cdn.pixabay.com/photo/2018/03/15/07/05/refreshment-3227297_1280.jpg",
         bgColor: "bg-green-500",
         textColor: "text-white"

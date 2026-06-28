@@ -3,7 +3,7 @@ import ContainerLayout from '../Layouts/ContainerLayout';
 import { footerLinks, addressInfo, contactInfo } from '../Constants/FooterStates';
 import { useNavigate } from 'react-router-dom';
 import { MENU_STATES } from '../Constants/OrderStates.jsx';
-
+import Input from './UI/Input.jsx';
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -141,16 +141,18 @@ const Footer = () => {
                         <h5 className="text-primary-200 font-black text-sm uppercase tracking-widest mb-3 select-none">
                             Never miss a deal again
                         </h5>
-                        <form className="flex flex-col sm:flex-row gap-3 w-full" onSubmit={(e) => e.preventDefault()}>
-                            <input
-                                type="email"
-                                placeholder="your@email.com"
-                                className="bg-transparent border border-white/20 text-white placeholder-white/40 px-4 py-3 rounded-xl flex-grow focus:outline-none focus:border-primary-200 transition-colors text-sm font-semibold w-full"
-                                required
-                            />
+                        <form className="flex flex-col sm:flex-row gap-3 w-full max-w-[280px] sm:max-w-[360px]" onSubmit={(e) => e.preventDefault()}>
+                            <div className="grow">
+                                <Input
+                                    type="email"
+                                    placeholder="your@email.com"
+                                    className="border-white/20! text-white! placeholder-white/40! focus:border-primary-200! py-2!"
+                                    required
+                                />
+                            </div>
                             <button
                                 type="submit"
-                                className="bg-primary-200 hover:bg-orange-600 text-white font-black text-xs tracking-wider px-6 py-3 rounded-xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer uppercase whitespace-nowrap w-full sm:w-auto"
+                                className="bg-primary-200 hover:bg-orange-600 text-white font-black text-xs tracking-wider px-6 py-2 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer uppercase whitespace-nowrap w-full sm:w-auto"
                             >
                                 Subscribe <FaArrowRight className="text-xs" />
                             </button>

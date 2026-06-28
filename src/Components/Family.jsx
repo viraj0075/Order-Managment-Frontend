@@ -12,7 +12,7 @@ export default function Family() {
                         return (
                             <div
                                 key={idx}
-                                className={`flex flex-col items-center justify-center p-3 sm:p-6 rounded-2xl lg:rounded-4xl aspect-[1.15] sm:aspect-square text-center shadow-sm select-none transition-transform duration-300 hover:scale-105 ${bgColor}`}
+                                className={`flex flex-col items-center justify-center p-3 sm:p-6 rounded-2xl lg:rounded-4xl aspect-[1.15] sm:aspect-square text-center shadow-sm select-none transition-transform duration-300 ${bgColor}`}
                             >
                                 <span className="text-primary-100 font-black text-3xl sm:text-4xl lg:text-5xl mb-2 tracking-tight uppercase leading-none">
                                     {value}

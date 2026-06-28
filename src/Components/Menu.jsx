@@ -97,13 +97,13 @@ export default function Menu() {
                             return (
                                 <div
                                     key={productId}
-                                    className="rounded-2xl p-3 sm:p-5 border border-gray-300/85 flex flex-col justify-between transition-all duration-300 hover:border-primary-100/30 hover:-translate-y-1.5 w-full"
+                                    className="rounded-2xl p-3 sm:p-5 border border-gray-300/85 flex flex-col justify-between transition-all duration-300 hover:border-primary-100/30 w-full cursor-pointer"
                                 >
                                     <div className="overflow-hidden rounded-xl w-full h-56 sm:h-64 md:h-72 mb-4 flex items-center justify-center">
                                         <img
                                             src={image}
                                             alt={`Fresh hot ${name.toLowerCase()}`}
-                                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                            className="w-full h-full object-cover transition-transform duration-500"
                                             loading="lazy"
                                         />
                                     </div>

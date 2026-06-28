@@ -22,7 +22,7 @@ export default function Events() {
                         const { title, serves, price, items, image } = pkg || {};
                         return (<div
                             key={idx}
-                            className={`relative overflow-hidden group rounded-2xl lg:rounded-3xl p-3 lg:p-5 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 w-[85vw] sm:w-[45vw] md:w-full shrink-0 ${pkg.bgColor}`}
+                            className={`relative overflow-hidden group rounded-2xl lg:rounded-3xl p-3 lg:p-5 flex flex-col justify-between transition-all duration-300 hover:shadow-xl w-[85vw] sm:w-[45vw] md:w-full shrink-0 ${pkg.bgColor}`}
                         >
 
                             <div>
@@ -30,7 +30,7 @@ export default function Events() {
                                     <img
                                         src={image}
                                         alt={title}
-                                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                        className="w-full h-full object-cover transition-transform duration-500"
                                         loading="lazy"
                                     />
                                 </div>
@@ -62,7 +62,7 @@ export default function Events() {
                             </div>
 
                             <button
-                                className="w-full bg-primary-100 text-white font-black text-sm tracking-wider py-3.5 rounded-xl hover:bg-orange-600 transition-all hover:scale-105 active:scale-95 shadow-md shadow-black/10 cursor-pointer uppercase"
+                                className="w-full bg-primary-100 text-white font-black text-sm tracking-wider py-3.5 rounded-xl hover:bg-orange-600 transition-all shadow-md shadow-black/10 cursor-pointer uppercase"
                                 aria-label={`Grab deal for ${title.toLowerCase() || ''}`}
                             >
                                 Grab Deal
