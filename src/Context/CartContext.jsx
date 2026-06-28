@@ -17,9 +17,9 @@ export const CartProvider = ({ children }) => {
         return savedCart ? JSON.parse(savedCart) : [];
     });
 
-    const [activeOrder, setActiveOrder] = useState(() => {
-        const savedOrder = localStorage.getItem('activeOrder');
-        return savedOrder ? JSON.parse(savedOrder) : null;
+    const [activeOrders, setActiveOrders] = useState(() => {
+        const savedOrders = localStorage.getItem('activeOrders');
+        return savedOrders ? JSON.parse(savedOrders) : [];
     });
 
     useEffect(() => {
@@ -27,12 +27,12 @@ export const CartProvider = ({ children }) => {
     }, [cart]);
 
     useEffect(() => {
-        if (activeOrder) {
-            localStorage.setItem('activeOrder', JSON.stringify(activeOrder));
+        if (activeOrders.length > 0) {
+            localStorage.setItem('activeOrders', JSON.stringify(activeOrders));
         } else {
-            localStorage.removeItem('activeOrder');
+            localStorage.removeItem('activeOrders');
         }
-    }, [activeOrder]);
+    }, [activeOrders]);
 
     const addToCart = (item) => {
         setCart((prevCart) => {
@@ -96,7 +96,7 @@ export const CartProvider = ({ children }) => {
                     status: orderData.status,
                     timestamp: new Date(orderData.createdAt).getTime()
                 };
-                setActiveOrder(newOrder);
+                setActiveOrders((prevOrders) => [...prevOrders, newOrder]);
                 clearCart();
                 return newOrder;
             } else {
@@ -108,23 +108,26 @@ export const CartProvider = ({ children }) => {
         }
     };
 
-    const updateOrderStatus = (status) => {
-        if (!activeOrder) return;
-        setActiveOrder((prevOrder) => {
-            if (!prevOrder) return null;
-            return { ...prevOrder, status };
-        });
+    const updateOrderStatus = (orderId, status) => {
+        setActiveOrders((prevOrders) =>
+            prevOrders.map((order) =>
+                order.id === orderId ? { ...order, status } : order
+            )
+        );
     };
 
-    const cancelActiveOrder = () => {
-        setActiveOrder(null);
+    const cancelActiveOrder = (orderId) => {
+        setActiveOrders((prevOrders) =>
+            prevOrders.filter((order) => order.id !== orderId)
+        );
     };
 
     return (
         <CartContext.Provider
             value={{
                 cart,
-                activeOrder,
+                activeOrder: activeOrders[activeOrders.length - 1] || null,
+                activeOrders,
                 addToCart,
                 updateQuantity,
                 removeFromCart,
