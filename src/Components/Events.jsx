@@ -24,11 +24,6 @@ export default function Events() {
                             key={idx}
                             className={`relative overflow-hidden group rounded-2xl lg:rounded-3xl p-3 lg:p-5 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 w-[85vw] sm:w-[45vw] md:w-full shrink-0 ${pkg.bgColor}`}
                         >
-                            {pkg.isPremium && (
-                                <span className="absolute top-8 left-8 bg-white/20 backdrop-blur-md text-primary-100 text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase z-20 select-none shadow-sm border border-white/10">
-                                    Premium
-                                </span>
-                            )}
 
                             <div>
                                 <div className="overflow-hidden rounded-xl w-full h-40 sm:h-44 md:h-48 mb-5 shadow-sm">
