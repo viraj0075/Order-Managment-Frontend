@@ -1,0 +1,26 @@
+name: Cost Optimizer
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  cost-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run AI Cost Optimizer
+        uses: viraj0075/github-cost-optimizer@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          fail-on: none
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: google/gemini-2.5-flash
+          OPENROUTER_URL: https://openrouter.ai/api/v1/chat/completions
