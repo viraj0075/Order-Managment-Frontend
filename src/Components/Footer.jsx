@@ -181,7 +181,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <p className="text-gray-400 text-xs font-semibold select-none">
-                            © {new Date().getFullYear()} Snacks N Snacks. All rights reserved.
+                            © {new Date().getFullYear()} Snacks N Snacks. Built by Viraj❤️.
                         </p>
                     </div>
 
