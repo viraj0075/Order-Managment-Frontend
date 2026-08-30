@@ -11,15 +11,16 @@ permissions:
 jobs:
   cost-analysis:
     runs-on: ubuntu-latest
+
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        # Add this env to silence the checkout action warning:
-        env:
-          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
-
+        
       - name: Run AI Cost Optimizer
-        uses: viraj0075/github-cost-optimizer@main
+        uses: viraj0075/github-cost-optimizer@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           fail-on: none
@@ -27,3 +28,6 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: google/gemini-2.5-flash
           OPENROUTER_URL: https://openrouter.ai/api/v1/chat/completions
+          # GITHUB_TOKEN is automatically provided by the runner,
+          # but you can keep it here for clarity:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
