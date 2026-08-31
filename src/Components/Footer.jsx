@@ -168,6 +168,7 @@ const Footer = () => {
                             <div className="flex gap-2.5">
                                 {footerLinks.social.map((social, idx) => (
                                     <a
+                                        key={idx}
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
