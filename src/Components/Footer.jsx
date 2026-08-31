@@ -168,7 +168,6 @@ const Footer = () => {
                             <div className="flex gap-2.5">
                                 {footerLinks.social.map((social, idx) => (
                                     <a
-                                        key={idx}
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -181,7 +180,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <p className="text-gray-400 text-xs font-semibold select-none">
-                            © {new Date().getFullYear()} Snacks N Snacks. Built by Viraj Koradia ❤️.
+                            © {new Date().getFullYear()} This product built by Viraj Koradia.
                         </p>
                     </div>
 
